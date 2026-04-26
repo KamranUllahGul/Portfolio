@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Android Developer Portfolio - Java, Kotlin, Jetpack Compose, Modern Android Apps">
+    <title>Kamran Ullah Gul | Android Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600&amp;display=swap');
+        
+        :root {
+            --android-green: #34A853;
+        }
+        
+        body {
+            font-family: 'Inter', system_ui, sans-serif;
+        }
+        
+        .heading-font {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e2937 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #34A853;
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover:after {
+            width: 100%;
+        }
+        
+        .section-header {
+            position: relative;
+        }
+        
+        .section-header:after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 3px;
+            background: #34A853;
+            bottom: -8px;
+            left: 0;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-200">
+    <!-- Navbar -->
+    <nav class="bg-slate-900/80 backdrop-blur-md border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 bg-[#34A853] rounded-2xl flex items-center justify-center text-white text-xl font-bold">K</div>
+                <span class="text-2xl font-semibold heading-font tracking-tight">Kamran Ullah Gul</span>
+            </div>
+            
+            <div class="hidden md:flex items-center gap-8 text-sm font-medium">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+            
+            <div class="flex items-center gap-4">
+                <a href="https://github.com/KamranUllahGul" target="_blank" 
+                   class="px-5 py-2.5 bg-slate-800 hover:bg-slate-700 rounded-3xl text-sm font-semibold flex items-center gap-2 transition-colors">
+                    <i class="fab fa-github"></i>
+                    <span>GitHub</span>
+                </a>
+                
+                <!-- Mobile menu button -->
+                <button onclick="toggleMobileMenu()" class="md:hidden w-11 h-11 flex items-center justify-center text-2xl">
+                    <i id="mobile-icon" class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-t border-slate-800 px-6 py-4">
+            <div class="flex flex-col gap-4 text-sm font-medium">
+                <a href="#about" onclick="toggleMobileMenu()" class="py-2">About</a>
+                <a href="#skills" onclick="toggleMobileMenu()" class="py-2">Skills</a>
+                <a href="#projects" onclick="toggleMobileMenu()" class="py-2">Projects</a>
+                <a href="#experience" onclick="toggleMobileMenu()" class="py-2">Experience</a>
+                <a href="#contact" onclick="toggleMobileMenu()" class="py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header id="home" class="hero-bg min-h-screen flex items-center">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="space-y-8 pt-12 md:pt-0">
+                <div class="inline-flex items-center gap-2 bg-slate-800 text-slate-300 text-sm font-medium px-6 py-3 rounded-3xl">
+                    <span class="relative flex h-3 w-3">
+                        <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#34A853] opacity-75"></span>
+                        <span class="relative inline-flex rounded-full h-3 w-3 bg-[#34A853]"></span>
+                    </span>
+                    Open to new opportunities
+                </div>
+                
+                <h1 class="text-6xl md:text-7xl font-semibold heading-font leading-none tracking-tighter">
+                    Hi, I'm <span class="text-[#34A853]">Kamran Ullah Gul</span><br>
+                    Android Developer
+                </h1>
+                
+                <p class="text-xl text-slate-400 max-w-md">
+                    Building delightful, high-performance Android apps with <strong class="text-white">Kotlin</strong> &amp; 
+                    <strong class="text-white">Jetpack Compose</strong>. 
+                    Passionate about clean architecture, beautiful UIs, and pixel-perfect experiences.
+                </p>
+                
+                <div class="flex items-center gap-4">
+                    <a href="#projects" 
+                       class="px-8 py-4 bg-[#34A853] hover:bg-[#2e9e4a] text-white font-semibold rounded-3xl flex items-center gap-3 transition-all">
+                        <i class="fas fa-rocket"></i>
+                        View My Apps
+                    </a>
+                    
+                    <a href="https://drive.google.com/file/d/1MWnN8I2SVKjOJ3AtSRpV5FIaybmtwo3N/view?usp=sharing" target="_blank"
+                       class="px-8 py-4 border border-slate-400 hover:border-slate-300 font-semibold rounded-3xl flex items-center gap-3 transition-all">
+                        <i class="fas fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+                
+                <div class="flex items-center gap-8 text-sm">
+                    <div>
+                        <div class="text-3xl font-semibold text-[#34A853]">10+</div>
+                        <div class="text-slate-400">Apps Published</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-semibold text-[#34A853]">10K+</div>
+                        <div class="text-slate-400">Downloads</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-semibold text-[#34A853]">4.7★</div>
+                        <div class="text-slate-400">Average Rating</div>
+                    </div>
+                </div>
+                
+                <div class="flex gap-6 text-3xl text-slate-400">
+                    <a href="https://github.com/yourusername" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/yourusername" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/yourusername" target="_blank" class="hover:text-white transition-colors"><i class="fab fa-x-twitter"></i></a>
+                </div>
+            </div>
+            
+            <!-- Hero visual -->
+            <div class="hidden md:flex justify-center">
+                <div class="relative">
+                    <div class="w-80 h-80 bg-gradient-to-br from-[#34A853] to-teal-400 rounded-[4rem] rotate-12 flex items-center justify-center shadow-2xl">
+                        <div class="bg-slate-950 w-72 h-72 rounded-3xl flex flex-col items-center justify-center text-center p-8 -rotate-12">
+                            <div class="text-8xl mb-4">🤖</div>
+                            <div class="text-[#34A853] text-2xl font-semibold heading-font">Android</div>
+                            <div class="text-4xl font-bold text-white tracking-tighter">Developer</div>
+                            <div class="mt-8 text-sm text-slate-400">Java • Kotlin • Compose • MVVM</div>
+                        </div>
+                    </div>
+                    <!-- Floating badges -->
+                    <div class="absolute -top-6 -left-6 bg-slate-900 px-6 py-3 rounded-3xl shadow-xl flex items-center gap-3 text-sm font-medium">
+                        <i class="fas fa-code text-[#34A853]"></i>
+                        Jetpack Compose
+                    </div>
+                    <div class="absolute -bottom-6 -right-6 bg-slate-900 px-6 py-3 rounded-3xl shadow-xl flex items-center gap-3 text-sm font-medium">
+                        <i class="fas fa-mobile-alt text-[#34A853]"></i>
+                        Play Store
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- About -->
+    <section id="about" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="grid md:grid-cols-12 gap-16 items-center">
+            <div class="md:col-span-7">
+                <h2 class="text-5xl font-semibold heading-font mb-6 section-header">About Me</h2>
+                <div class="prose prose-invert text-lg text-slate-400 max-w-none">
+                    <p>I'm a passionate Android Engineer with <strong>1+ years</strong> of experience building production-grade mobile applications. I specialize in modern Android development using Kotlin, Jetpack Compose, and Clean Architecture.</p>
+                    <p>Experienced in working on diverse projects, gaining practical experience with modern Android tools, libraries, and best practices.</p>
+                    <p>I have solid foundation in the full app development lifecycle, from designing features to publishing on the Google Play Store.</p>
+                </div>
+                
+                <a href="#" class="inline-flex items-center gap-3 mt-10 text-[#34A853] hover:text-[#2e9e4a] font-medium">
+                    Read my full story 
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+            
+            <div class="md:col-span-5 bg-slate-900 rounded-3xl p-8 border border-slate-800">
+                <h3 class="font-semibold text-xl mb-6 flex items-center gap-3"><i class="fas fa-map-marker-alt text-[#34A853]"></i> Currently in Rawalpindi, Pakistan</h3>
+                <ul class="space-y-6">
+                    <li class="flex justify-between"><span class="text-slate-400">Preferred Role</span><span class="font-medium">Android Engineer / Tech Lead</span></li>
+                    <li class="flex justify-between"><span class="text-slate-400">Open to Relocation</span><span class="font-medium text-emerald-400">Yes (Remote / On-site)</span></li>
+                    <li class="flex justify-between"><span class="text-slate-400">Availability</span><span class="font-medium">Immediate</span></li>
+                    <li class="flex justify-between"><span class="text-slate-400">Languages</span><span class="font-medium">English (Fluent), Urdu (Native)</span></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="bg-slate-900 py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-semibold heading-font mb-12 text-center section-header mx-auto max-w-fit">Tech Stack</h2>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="skills-container">
+                <!-- Populated by JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="flex justify-between items-end mb-12">
+            <h2 class="text-5xl font-semibold heading-font section-header">Featured Projects</h2>
+            <!-- 
+            <a href="https://github.com/KamranUllahGul target="_blank" class="flex items-center gap-2 text-slate-400 hover:text-white">
+                See all on GitHub <i class="fas fa-arrow-right"></i>
+            </a> 
+            -->
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-container">
+            <!-- Populated by JS -->
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience" class="bg-slate-900 py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-5xl font-semibold heading-font mb-12 section-header">Experience</h2>
+            
+            <div class="space-y-16">
+                <!-- Job 1 -->
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-64 text-slate-400 text-sm font-medium">
+                        <div>Jan 2025 — Present</div>
+                        <div class="text-[#34A853]">Android Engineer</div>
+                        <div>Grape Technologies • On-site</div>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-2xl font-semibold mb-4">Development of  multiple apps</h4>
+                        <ul class="list-disc pl-5 space-y-3 text-slate-400">
+                            <li>Developed and maintained Android apps using Java, Kotlin, MVVM,Jetpack Compose, and Clean Architecture</li>
+                            <li>Contributed across the full development lifecycle, from feature implementation to optimization and Play Store–ready builds.</li>
+                            <li>Worked on multiple utility, media, and sensor-based Android applications</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Job 2 -->
+                <!-- <div class="flex flex-col md:flex-row gap-8">
+                    <div class="md:w-64 text-slate-400 text-sm font-medium">
+                        <div>Mar 2022 — Dec 2023</div>
+                        <div class="text-[#34A853]">Android Developer</div>
+                        <div>Previous Company • Islamabad</div>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="text-2xl font-semibold mb-4">Developed e-commerce app with real-time order tracking</h4>
+                        <ul class="list-disc pl-5 space-y-3 text-slate-400">
+                            <li>Integrated Firebase for push notifications and analytics</li>
+                            <li>Built MVVM + Clean Architecture pattern</li>
+                            <li>Reduced app size by 35% through ProGuard optimizations</li>
+                        </ul>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="max-w-7xl mx-auto px-6 py-24">
+        <div class="bg-slate-900 rounded-3xl p-12 md:p-16 text-center max-w-2xl mx-auto">
+            <h2 class="text-5xl font-semibold heading-font mb-6">Let's build something amazing together</h2>
+            <p class="text-slate-400 mb-10">Whether you have a project in mind or just want to chat about Android development — I'm always happy to connect!</p>
+            
+            <a href="mailto:kamranullahgul12@gmail.com" 
+               class="inline-flex items-center justify-center gap-4 bg-[#34A853] hover:bg-[#2e9e4a] text-white font-semibold text-xl px-16 py-6 rounded-3xl transition-all">
+                <i class="fas fa-envelope"></i>
+                Get in touch
+            </a>
+            
+            <div class="mt-12 text-sm text-slate-400">
+                📍 Rawalpindi, Punjab, Pakistan<br>
+                Available for freelance, full-time, or contract roles
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black py-12 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-sm text-slate-400">
+            <div>Made in Pakistan</div>
+            <div class="flex gap-6">
+                <a href="https://github.com/KamranUllahGul" target="_blank" class="hover:text-white">GitHub</a>
+                <a href="https://www.linkedin.com/in/kamran-ullah-gul-4b3b81341/" target="_blank" class="hover:text-white">LinkedIn</a>
+                <a href="#" class="hover:text-white">Resume</a>
+            </div>
+            <div>© 2026 Kamran Ullag Gul.</div>
+        </div>
+    </footer>
+
+    <script>
+        // Tailwind script initialization
+        function initializeTailwind() {
+            return {
+                config(userConfig = {}) {
+                    return {
+                        configUser: userConfig,
+                        theme: {
+                            extend: {
+                                colors: {
+                                    android: '#34A853'
+                                }
+                            }
+                        }
+                    }
+                },
+                theme(userConfig = {}) {
+                    return {
+                        ...this.defaultTheme(),
+                        ...this.config(userConfig).theme
+                    }
+                },
+                defaultTheme() {
+                    return {
+                        extend: {}
+                    }
+                }
+            }
+        }
+        
+        // Skills data - EASY TO CUSTOMIZE
+        const skillsData = [
+            { name: "Kotlin", icon: "https://skillicons.dev/icons?i=kotlin" },
+            { name: "Android", icon: "https://skillicons.dev/icons?i=androidstudio" },
+            { name: "Jetpack Compose", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jetpackcompose/jetpackcompose-original.svg" },
+            { name: "MVVM", icon: "https://ia601407.us.archive.org/19/items/mvvm_20260424_202604/MVVm.png" },
+            { name: "Room", icon: "https://skillicons.dev/icons?i=sqlite" },
+            { name: "Retrofit", icon: "https://ia600807.us.archive.org/7/items/retro-fit-icon/RetroFitIcon.png" },
+            { name: "Koin", icon: "https://ia601408.us.archive.org/21/items/koin_20260424/Koin.png" },
+            { name: "Coroutines", icon: "https://archive.org/download/coroutine/coroutine.png" },
+            { name: "Firebase", icon: "https://skillicons.dev/icons?i=firebase" },
+            { name: "GitHub Actions", icon: "https://skillicons.dev/icons?i=github" },
+            { name: "Material 3", icon: "https://ia600406.us.archive.org/32/items/m_20260424/M.png" },
+            { name: "Clean Architecture", icon: "https://skillicons.dev/icons?i=java" }
+        ]
+        
+        // Projects data - EASY TO CUSTOMIZE (add/remove as many as you want)
+        const projectsData = [
+            {
+                title: "Phone manager- cleaner",
+                description: "Modern cleaner that inclkude modules like duplicates cleaner, whatsapp Cleaner, battery manager, Gallery and more",
+                tech: ["Kotlin", "MVVM", "Xml", "SAF","DocumentFile"],
+                github: "",
+                playstore: "#",
+                image: "https://archive.org/download/vxqz7/vxqz7.jpg", // Replace with your actual screenshot URL
+                color: "bg-emerald-500"
+            },
+            {
+                title: "Vr 360-Video Player",
+                description: "For playing the Vr and 360° videos on phone wioth offline(Download) support",
+                tech: ["Kotlin", "Xml", "FiresBase", "MD360 lib"],
+                github: "#",
+                playstore: "#",
+                image: "https://ia902907.us.archive.org/4/items/chat-gpt-image-apr-26-2026-11-55-45-am/JpCYK.jpg",
+                color: "bg-blue-500"
+            },
+
+            // add more apps if needed
+            // {
+            //     title: "HealthSync - Fitness Tracker",
+            //     description: "Fitness companion integrating Google Health Connect, charts, and AI-powered insights.",
+            //     tech: ["Kotlin", "Compose", "Health Connect", "Coil"],
+            //     github: "https://github.com/yourusername/healthsync",
+            //     playstore: "#",
+            //     image: "https://picsum.photos/id/301/600/400",
+            //     color: "bg-rose-500"
+            // }
+        ]
+        
+        // Render skills
+        function renderSkills() {
+            const container = document.getElementById('skills-container')
+            container.innerHTML = skillsData.map(skill => `
+                <div class="bg-slate-800 hover:bg-slate-700 rounded-3xl p-6 flex flex-col items-center gap-4 transition-colors border border-transparent hover:border-[#34A853]/30">
+                    <img src="${skill.icon}" alt="${skill.name}" class="h-12 w-12">
+                    <span class="font-semibold text-lg">${skill.name}</span>
+                </div>
+            `).join('')
+        }
+        
+        // Render projects
+        function renderProjects() {
+            const container = document.getElementById('projects-container')
+            container.innerHTML = projectsData.map(project => `
+                <div class="card-hover bg-slate-900 border border-slate-800 rounded-3xl overflow-hidden group">
+                    <div class="relative">
+                        <img src="${project.image}" alt="${project.title}" class="w-full h-56 object-cover">
+                        <div class="absolute top-4 right-4 ${project.color} text-white text-xs font-bold px-4 py-1 rounded-3xl">
+                            LIVE
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-2xl font-semibold mb-2">${project.title}</h3>
+                        <p class="text-slate-400 mb-6">${project.description}</p>
+                        
+                        <div class="flex flex-wrap gap-2 mb-8">
+                            ${project.tech.map(t => `<span class="text-xs bg-slate-800 px-4 py-2 rounded-3xl">${t}</span>`).join('')}
+                        </div>
+                         <!--   for the repo and playstorebtn
+                               <div class="flex gap-4">
+                            <a href="${project.github}" target="_blank" 
+                               class="flex-1 text-center py-4 bg-slate-800 hover:bg-slate-700 rounded-3xl font-medium flex items-center justify-center gap-2">
+                                <i class="fab fa-github"></i> Repo
+                            </a>
+                            ${project.playstore !== '#' ? `
+                            <a href="${project.playstore}" target="_blank" 
+                               class="flex-1 text-center py-4 border border-[#34A853] text-[#34A853] hover:bg-[#34A853] hover:text-white rounded-3xl font-medium flex items-center justify-center gap-2">
+                                <i class="fas fa-store"></i> Play Store
+                            </a>` : ''}
+                        </div>
+
+                        -->
+                     
+
+
+                    </div>
+                </div>
+            `).join('')
+        }
+        
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu')
+            const icon = document.getElementById('mobile-icon')
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden')
+                icon.classList.replace('fa-bars', 'fa-xmark')
+            } else {
+                menu.classList.add('hidden')
+                icon.classList.replace('fa-xmark', 'fa-bars')
+            }
+        }
+        
+        // Initialize everything
+        function init() {
+            initializeTailwind().theme()
+            renderSkills()
+            renderProjects()
+            
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const target = document.querySelector(this.getAttribute('href'))
+                    if (target) {
+                        e.preventDefault()
+                        target.scrollIntoView({ behavior: 'smooth' })
+                    }
+                })
+            })
+            
+            console.log('%c✅ Android Developer Portfolio Template loaded successfully!', 'color:#34A853; font-size:13px; font-family:monospace')
+        }
+        
+        // Run when page loads
+        window.onload = init
+    </script>
+</body>
+</html>
