@@ -99,6 +99,15 @@ const projectsData = [
         image: "assets/hidden_camera_img.jpg",
         color: "#"
     },
+     {
+        title: "utility Tools/Bubble Measure Pro",
+        description: "Turn your phone into a precision toolkit. Bubble level, laser level, ruler, protractor, plumb bob, compass, altimeter, and light meter — all in one sleek app.",
+        tech: ["Kotlin", "Xml", "Sensor_Service","camera_sensor","Location_service"],
+        github: "#",
+        playstore: "#",
+        image: "assets/measure_pro.jpg",
+        color: "#"
+    },
 
     // add more apps if needed
     // {
