@@ -124,7 +124,7 @@ const projectsData = [
         tech: ["Kotlin", "Jetpack-Compsoe", "MaterialUI","Widget","Sensor_Service"],
         github: "#",
         playstore: "#",
-        image: "assets/tap_to_lock.png",
+        image: "assets/screen_time.png",
         color: "#"
     },
 
