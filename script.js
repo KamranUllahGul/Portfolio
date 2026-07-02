@@ -111,7 +111,7 @@ const projectsData = [
      {
         title: "Tap to Lock",
         description: "Lock your device with a simple gesture. Instant lock widget, custom configurations, accessibility shortcuts, and invisible home screen triggers — protect your screen and save your physical power button with a quick double tap.",
-        tech: ["Kotlin", "Jetpack-Compsoe", "MaterialUI","Widget"],
+        tech: ["Kotlin", "Jetpack-Compsoe", "MaterialUI","Jetpack Glance widget",],
         github: "#",
         playstore: "#",
         image: "assets/tap_to_lock.png",
@@ -121,7 +121,7 @@ const projectsData = [
      {
         title: "Screen Time Measure",
         description: "Master your digital habits with precise tracking. Real-time usage monitors, unlock counters, session tracking, and detailed analytical reports — take complete control of your digital well-being in one smart dashboard.",
-        tech: ["Kotlin", "Jetpack-Compsoe", "MaterialUI","Widget","Sensor_Service"],
+        tech: ["Kotlin", "Jetpack-Compsoe", "MaterialUI","Jetpack Glance widget","system events","Room database","Navigation3 library"],
         github: "#",
         playstore: "#",
         image: "assets/screen_time.png",
